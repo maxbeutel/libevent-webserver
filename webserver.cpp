@@ -56,8 +56,6 @@ end:
     evhttp_uri_free(decodedUri);
   }
 
-  // @FIXME does path need to be free'ed when decodedPath fails?
-
   auto result = std::make_tuple(
       (status == URI_TO_PATH_STATUS::SUCCESS ? std::string(decodedPath) : std::string("")),
       status
